@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript" src="https://github.com/processing/p5.js/releases/download/0.5.16/p5.js"></script>
+   <script language="javascript" type="text/javascript" src="game.js"></script>
+  
+  var x = 255;
+var y = 100;
+PImage img;
+void setup() {
+  size(600, 440);
+  img = loadImage("espaço.jpg");
+}
 
-You can use the [editor on GitHub](https://github.com/OiAlicia/juego/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+function draw() {
+  background(img);;
+  if (keyIsDown(LEFT_ARROW))
+    x-=5;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+  if (keyIsDown(RIGHT_ARROW))
+    x+=5;
 
-### Markdown
+  if (keyIsDown(UP_ARROW))
+    y-=5;
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  if (keyIsDown(DOWN_ARROW))
+    y+=5;
 
-```markdown
-Syntax highlighted code block
+  ellipse(x, y, 50, 50);
+rect(250, 250, 55, 55);
+}
 
-# Header 1
-## Header 2
-### Header 3
+  
+  <style> body {padding: 0; margin: 0;} </style>
+</head>
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/OiAlicia/juego/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<body>
+</body>
+</html> 
